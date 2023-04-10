@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+    labels:
+        app: nodeaks
+    name: node-svc
+spec:
+    ports:
+    - port: 4000
+      protocol: TCP
+      targetPort: 4000
+      #      nodePort: 30001
+    selector:
+        app: nodeaks
+    type: LoadBalancer
+
